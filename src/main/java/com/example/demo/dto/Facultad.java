@@ -3,7 +3,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table (name = "facultades")
@@ -15,11 +15,11 @@ public class Facultad {
 	private String nombre;
 	
 	@OneToMany
-    @JoinColumn(name="id")
+    @JoinColumn(name="id_facultad")
 	private List<Investigador> investigador;
 	
 	@OneToMany
-    @JoinColumn(name="id")
+    @JoinColumn(name="id_facultad")
 	private List<Equipo> equipo;
 	
 	  public Facultad() {

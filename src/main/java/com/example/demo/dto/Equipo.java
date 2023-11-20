@@ -3,19 +3,23 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table (name = "equipos")
 public class Equipo {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String num_serie;
 	private String nombre;
 	
 	@OneToMany
-    @JoinColumn(name="id")
+    @JoinColumn(name="num_serie")
+	@JsonIgnore
+	private List<Reserva> reservas;
+	
+	@ManyToOne
+    @JoinColumn(name="id_facultad")
 	private List<Facultad> facultad;
 	
 	  public Equipo() {

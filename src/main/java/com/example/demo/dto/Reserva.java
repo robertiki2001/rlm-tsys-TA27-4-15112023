@@ -2,7 +2,7 @@ package com.example.demo.dto;
 
 import java.sql.Date;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table (name = "reservas")
